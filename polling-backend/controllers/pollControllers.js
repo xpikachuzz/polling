@@ -43,11 +43,10 @@ async function pollGET (req, res) {
       id: Number(pollId)
     },
     include: {
-      choices: true
+      choices: true,
+      answer: true
     }
   })
-
-
   res.status(200).json(data)
 }
 

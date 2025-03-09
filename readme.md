@@ -98,3 +98,13 @@ setInterval(() => {
          2. create poll w/ expiry
          3. delete poll
 2. Add IO and Socket
+3. Make Log In system
+   1. Login/Signup
+   2. React doesn't use localStorage
+   3. User model:
+      1. Answer[]
+      2. username
+      3. password
+      4. userId   (sessionId)?
+4. Only admins can view the poll results
+5. 

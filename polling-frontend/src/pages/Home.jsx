@@ -1,6 +1,7 @@
 import React from 'react'
 
 export const Home = () => {
+  console.log("HOME")
   return (
     <div className='home bg-blue-900 h-full'>
       <div className='hero flex'>

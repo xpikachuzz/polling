@@ -11,7 +11,9 @@ model Poll {
     choices       Choice[]
     duration      Int
     createdAt     DateTime                @default(now())
+    answer        Answer[]
 }
+
 
 model Choice {
     id            Int                     @id @default(autoincrement())
@@ -19,11 +21,34 @@ model Choice {
     count         Int                     @default(0)
     Poll          Poll                    @relation(fields: [PollId], references: [id])
     PollId        Int
+    answers       Answer[]
 }
+
+
+model User {
+    id          Int                     @id @default(autoincrement())
+    username    String                  @unique
+    password    String 
+    userId      String                  @unique
+    answers     Answer[]
+}
+
+
+model Answer {
+    id          Int                     @id @default(autoincrement())
+    user        User                    @relation(fields: [userId], references: [userId])
+    userId      String
+    poll        Poll                    @relation(fields: [pollId], references: [id])
+    pollId      Int
+    choice      Choice                  @relation(fields: [choiceId], references: [id])
+    choiceId    Int
+}
+
 
 generator client {
   provider = "prisma-client-js"
 }
+
 
 datasource db {
   provider = "postgresql"
