@@ -52,5 +52,5 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = "postgresql://postgres:Kirat2008@localhost:5432/polling"
 }
