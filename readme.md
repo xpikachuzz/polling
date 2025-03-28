@@ -1,7 +1,8 @@
 # The project:
 A polling website, which:
 1. displays live changes in the polls votes by using web sockets.
-2. The user is required to login/register. 
+2. The user is required to login/register.
+3. Use of PSQL for storage
 
 # Features to be added by dev:
 1. Fix the design
